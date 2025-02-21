@@ -8,8 +8,8 @@ A basic guide to deploying your docs to various hosting providers
 
 If you host the source code for a project on [GitHub], you can easily use
 [GitHub Pages] to host the documentation for your project. There are two basic
-types of GitHub Pages sites: [Project Pages] sites, and [User and Organization
-Pages] sites. They are nearly identical but have some important differences,
+[types of GitHub Pages sites]: Project Pages sites, and User and Organization
+Pages sites. They are nearly identical but have some important differences,
 which require a different work flow when deploying.
 
 ### Project Pages
@@ -35,11 +35,14 @@ to GitHub. Therefore, you may want to verify any changes you make to the docs
 beforehand by using the `build` or `serve` commands and reviewing the built
 files locally.
 
-!!! warning
+WARNING:
+You should never edit files in your pages repository by hand if you're using
+the `gh-deploy` command because you will lose your work the next time you
+run the command.
 
-    You should never edit files in your pages repository by hand if you're using
-    the `gh-deploy` command because you will lose your work the next time you
-    run the command.
+WARNING:
+If there are untracked files or uncommitted work in the local repository where
+`mkdocs gh-deploy` is run, these will be included in the pages that are deployed.
 
 ### Organization and User Pages
 
@@ -49,7 +52,7 @@ with the GitHub account name. Therefore, you need working copies of two
 repositories on our local system. For example, consider the following file
 structure:
 
-```no-highlight
+```text
 my-project/
     mkdocs.yml
     docs/
@@ -92,8 +95,7 @@ documentation on [Troubleshooting custom domains].
 
 [GitHub]: https://github.com/
 [GitHub Pages]: https://pages.github.com/
-[Project Pages]: https://help.github.com/articles/user-organization-and-project-pages/#project-pages-sites
-[User and Organization Pages]: https://help.github.com/articles/user-organization-and-project-pages/#user-and-organization-pages-sites
+[types of GitHub Pages sites]: https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites
 [ghp-import]: https://github.com/davisp/ghp-import
 [remote_branch]: ./configuration.md#remote_branch
 [Custom Domain]: https://help.github.com/articles/adding-or-removing-a-custom-domain-for-your-github-pages-site
@@ -104,24 +106,14 @@ documentation on [Troubleshooting custom domains].
 ## Read the Docs
 
 [Read the Docs][rtd] offers free documentation hosting. You can import your docs
-using any major version control system, including Mercurial, Git, Subversion,
-and Bazaar. Read the Docs supports MkDocs out-of-the-box. Follow the
-[instructions] on their site to arrange the files in your repository properly,
+using the Git version control system. Read the Docs supports MkDocs out-of-the-box.
+Follow the [instructions] on their site to arrange the files in your repository properly,
 create an account and point it at your publicly hosted repository. If properly
 configured, your documentation will update each time you push commits to your
 public repository.
 
-!!! note
-
-    To benefit from all of the [features] offered by Read the Docs, you will need
-    to use the [Read the Docs theme][theme] which ships with MkDocs. The various
-    themes which may be referenced in Read the Docs' documentation are Sphinx
-    specific themes and will not work with MkDocs.
-
 [rtd]: https://readthedocs.org/
 [instructions]: https://docs.readthedocs.io/en/stable/intro/getting-started-with-mkdocs.html
-[features]: https://docs.readthedocs.io/en/latest/features.html
-[theme]: ./choosing-your-theme.md#readthedocs
 
 ## Other Providers
 
@@ -168,27 +160,33 @@ Note that, due to the security settings of all modern browsers, some things
 will not work the same and some features may not work at all. In fact, a few
 settings will need to be customized in very specific ways.
 
-- [site_url]:
+-   [site_url]:
 
     The `site_url` must be set to an empty string, which instructs MkDocs to
     build your site so that it will work with the `file://` scheme.
 
-        site_url: ""
+    ```yaml
+    site_url: ""
+    ```
 
-- [use_directory_urls]:
+-   [use_directory_urls]:
 
     Set `use_directory_urls` to `false`. Otherwise, internal links between
     pages will not work properly.
 
-        use_directory_urls: false
+    ```yaml
+    use_directory_urls: false
+    ```
 
-- [search]:
+-   [search]:
 
     You will need to either disable the search plugin, or use a third-party
     search plugin which is specifically designed to work with the `file://`
     scheme. To disable all plugins, set the `plugins` setting to an empty list.
 
-        plugins: []
+    ```yaml
+    plugins: []
+    ```
 
     If you have other plugins enabled, simply ensure that `search` is not
     included in the list.

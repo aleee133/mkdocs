@@ -27,10 +27,10 @@ user guide.
 
 If you need help with MkDocs, do not hesitate to get in contact with us!
 
-- For questions and high-level discussions, use **[Discussions]** on GitHub.
-    - For small questions, a good alternative is the **[Chat room]** on
-      Gitter/Matrix (**new!**)
-- To report a bug or make a feature request, open an **[Issue]** on GitHub.
+-   For questions and high-level discussions, use **[Discussions]** on GitHub.
+    -   For small questions, a good alternative is the **[Chat room]** on
+        Gitter/Matrix.
+-   To report a bug or make a feature request, open an **[Issue]** on GitHub.
 
 Please note that we may only provide
 support for problems/questions regarding core features of MkDocs. Any
@@ -44,7 +44,7 @@ Make sure to stick around to answer some questions as well!
 
 - [Official Documentation][mkdocs]
 - [Latest Release Notes][release-notes]
-- [MkDocs Wiki][wiki] (Third-party themes, recipes, plugins and more)
+- [Catalog of third-party plugins, themes and recipes][catalog]
 
 ## Contributing to MkDocs
 
@@ -62,17 +62,17 @@ discussion forums is expected to follow the [PyPA Code of Conduct].
 [codecov-link]: https://codecov.io/github/mkdocs/mkdocs?branch=master
 [pypi-v-image]: https://img.shields.io/pypi/v/mkdocs.svg
 [pypi-v-link]: https://pypi.org/project/mkdocs/
-[GHAction-image]: https://github.com/mkdocs/mkdocs/workflows/CI/badge.svg?branch=master&event=push
-[GHAction-link]: https://github.com/mkdocs/mkdocs/actions?query=event%3Apush+branch%3Amaster
+[GHAction-image]: https://github.com/mkdocs/mkdocs/actions/workflows/ci.yml/badge.svg
+[GHAction-link]: https://github.com/mkdocs/mkdocs/actions/workflows/ci.yml
 <!-- Links -->
 [mkdocs]: https://www.mkdocs.org
 [Issue]: https://github.com/mkdocs/mkdocs/issues
 [Discussions]: https://github.com/mkdocs/mkdocs/discussions
 [Chat room]: https://gitter.im/mkdocs/community
 [release-notes]: https://www.mkdocs.org/about/release-notes/
-[wiki]: https://github.com/mkdocs/mkdocs/wiki
 [Contributing Guide]: https://www.mkdocs.org/about/contributing/
 [PyPA Code of Conduct]: https://www.pypa.io/en/latest/code-of-conduct/
+[catalog]: https://github.com/mkdocs/catalog
 
 ## License
 
